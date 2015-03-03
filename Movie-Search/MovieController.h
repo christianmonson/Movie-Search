@@ -14,4 +14,5 @@
 
 @property (nonatomic, strong) NSArray *resultMovies;
 
+- (void)retrieveMovieWithParameters:(NSDictionary *)dictionary completion:(void (^)(NSArray *))completion;
 @end

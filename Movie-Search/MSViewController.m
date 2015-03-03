@@ -9,6 +9,7 @@
 #import "MSViewController.h"
 #import "MSResponseTableViewDataSource.h"
 #import "MSMovieDetailViewController.h"
+#import "MovieController.h"
 
 @interface MSViewController () <UITableViewDelegate>
 
@@ -33,7 +34,12 @@
 }
 
 - (IBAction)search:(id)sender {
-
+    NSString *name = [self.searchField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dictionary = @{@"api_key": @"",@"query":name};
+    [[MovieController sharedInstance] retrieveMovieWithParameters:dictionary completion:^(NSArray *movies) {
+        NSString *movieName = movies[0][@"title"];
+        NSLog(@"%@",movieName);
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -7,6 +7,8 @@
 //
 
 #import "MovieController.h"
+#import <AFNetworking.h>
+#import "MSNetworkController.h"
 
 @implementation MovieController
 
@@ -19,6 +21,21 @@
     });
     return sharedInstance;
     
+}
+
+- (void)retrieveMovieWithParameters:(NSDictionary *)dictionary completion:(void (^)(NSArray *))completion {
+    NSString *path = @"search/movie";
+    
+    [[MSNetworkController api] GET:path parameters:dictionary success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        self.resultMovies = [responseObject objectForKey:@"results"];
+        completion(self.resultMovies);
+    
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+        
+        completion(nil);
+    }];
 }
 
 @end
