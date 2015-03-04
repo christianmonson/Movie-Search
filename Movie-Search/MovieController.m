@@ -38,4 +38,15 @@
     }];
 }
 
+- (void)retrieveMovieWithID:(NSString *)movieID andParameter:(NSDictionary *)dictionary completion:(void (^)(NSDictionary *))completion {
+    NSString *path = [NSString stringWithFormat:@"movie/%@", movieID];
+    
+    [[MSNetworkController api] GET:path parameters:dictionary success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSDictionary *dictionary = responseObject;
+        completion(dictionary);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        completion(nil);
+    }];
+}
+
 @end

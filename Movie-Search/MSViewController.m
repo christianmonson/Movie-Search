@@ -39,6 +39,7 @@
     [[MovieController sharedInstance] retrieveMovieWithParameters:dictionary completion:^(NSArray *movies) {
         NSString *movieName = movies[0][@"title"];
         NSLog(@"%@",movieName);
+        [self.tableView reloadData];
     }];
 }
 
@@ -47,6 +48,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     MSMovieDetailViewController *detailViewController = [MSMovieDetailViewController new];
+    NSNumber *movieID = [MovieController sharedInstance].resultMovies[indexPath.row][@"id"];
+    NSString *movieIDString = [NSString stringWithFormat:@"%@", movieID];
+    detailViewController.movieID = movieIDString;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

@@ -30,6 +30,7 @@ static NSString * const cellReuseKey = @"cell";
     
     NSDictionary *movie = [MovieController sharedInstance].resultMovies[indexPath.row];
     cell.textLabel.text = movie[@"title"];
+    cell.detailTextLabel.text = movie[@"release_date"];
 
     return cell;
 }

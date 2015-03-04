@@ -10,4 +10,6 @@
 
 @interface MSMovieDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSString *movieID;
+
 @end
