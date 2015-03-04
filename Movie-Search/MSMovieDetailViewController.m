@@ -38,7 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [[MovieController sharedInstance] retrieveMovieWithID:self.movieID andParameter:@{@"api_key": @""} completion:^(NSDictionary *dictionary) {
+    [[MovieController sharedInstance] retrieveMovieWithID:self.movieID completion:^(NSDictionary *dictionary) {
         self.taglineLabel.text = dictionary[@"tagline"];
         self.releaseDateLabel.text = dictionary[@"release_date"];
         self.overviewLabel.text = dictionary[@"overview"];

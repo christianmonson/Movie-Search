@@ -35,8 +35,8 @@
 
 - (IBAction)search:(id)sender {
     NSString *name = [self.searchField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *dictionary = @{@"api_key": @"",@"query":name};
-    [[MovieController sharedInstance] retrieveMovieWithParameters:dictionary completion:^(NSArray *movies) {
+
+    [[MovieController sharedInstance] retrieveMovieWithName:name completion:^(NSArray *movies) {
         NSString *movieName = movies[0][@"title"];
         NSLog(@"%@",movieName);
         [self.tableView reloadData];

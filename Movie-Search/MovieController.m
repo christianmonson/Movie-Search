@@ -10,6 +10,8 @@
 #import <AFNetworking.h>
 #import "MSNetworkController.h"
 
+static NSString * const APIKey = @"";
+
 @implementation MovieController
 
 + (MovieController *)sharedInstance {
@@ -23,8 +25,10 @@
     
 }
 
-- (void)retrieveMovieWithParameters:(NSDictionary *)dictionary completion:(void (^)(NSArray *))completion {
+- (void)retrieveMovieWithName:(NSString *)name completion:(void (^)(NSArray *))completion {
     NSString *path = @"search/movie";
+    
+    NSDictionary *dictionary = @{@"api_key": APIKey, @"query":name};
     
     [[MSNetworkController api] GET:path parameters:dictionary success:^(NSURLSessionDataTask *task, id responseObject) {
         
@@ -38,8 +42,9 @@
     }];
 }
 
-- (void)retrieveMovieWithID:(NSString *)movieID andParameter:(NSDictionary *)dictionary completion:(void (^)(NSDictionary *))completion {
+- (void)retrieveMovieWithID:(NSString *)movieID completion:(void (^)(NSDictionary *))completion {
     NSString *path = [NSString stringWithFormat:@"movie/%@", movieID];
+    NSDictionary *dictionary = @{@"api_key": APIKey};
     
     [[MSNetworkController api] GET:path parameters:dictionary success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dictionary = responseObject;
