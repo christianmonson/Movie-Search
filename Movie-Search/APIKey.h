@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString * const APIKeyString = @"";
+
 @interface APIKey : NSObject
 
 @end

@@ -26,6 +26,7 @@
 		7167C70619524BC700FD8F55 /* MSMovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7167C70419524BC700FD8F55 /* MSMovieDetailViewController.xib */; };
 		7167C70F19525B6500FD8F55 /* MovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167C70E19525B6500FD8F55 /* MovieController.m */; };
 		74248905E3668E40FAA8332D /* libPods-Movie-Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACFDAFA028DA3912157BE8A /* libPods-Movie-Search.a */; };
+		EB6C83B41AAA529A000935E8 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6C83B31AAA529A000935E8 /* APIKey.m */; };
 		EBFB6D601AA65E17000C6D39 /* MSNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFB6D5F1AA65E17000C6D39 /* MSNetworkController.m */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,8 @@
 		7167C70419524BC700FD8F55 /* MSMovieDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSMovieDetailViewController.xib; sourceTree = "<group>"; };
 		7167C70D19525B6500FD8F55 /* MovieController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieController.h; sourceTree = "<group>"; };
 		7167C70E19525B6500FD8F55 /* MovieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieController.m; sourceTree = "<group>"; };
+		EB6C83B21AAA529A000935E8 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
+		EB6C83B31AAA529A000935E8 /* APIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIKey.m; sourceTree = "<group>"; };
 		EBFB6D5E1AA65E17000C6D39 /* MSNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNetworkController.h; sourceTree = "<group>"; };
 		EBFB6D5F1AA65E17000C6D39 /* MSNetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetworkController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +159,8 @@
 				7167C70E19525B6500FD8F55 /* MovieController.m */,
 				EBFB6D5E1AA65E17000C6D39 /* MSNetworkController.h */,
 				EBFB6D5F1AA65E17000C6D39 /* MSNetworkController.m */,
+				EB6C83B21AAA529A000935E8 /* APIKey.h */,
+				EB6C83B31AAA529A000935E8 /* APIKey.m */,
 				7167C6DF1952460600FD8F55 /* Images.xcassets */,
 				7167C6CE1952460600FD8F55 /* Supporting Files */,
 			);
@@ -331,6 +336,7 @@
 				7167C70519524BC700FD8F55 /* MSMovieDetailViewController.m in Sources */,
 				EBFB6D601AA65E17000C6D39 /* MSNetworkController.m in Sources */,
 				7167C7011952498600FD8F55 /* MSResponseTableViewDataSource.m in Sources */,
+				EB6C83B41AAA529A000935E8 /* APIKey.m in Sources */,
 				7167C6D41952460600FD8F55 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

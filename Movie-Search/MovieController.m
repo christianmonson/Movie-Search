@@ -9,8 +9,7 @@
 #import "MovieController.h"
 #import <AFNetworking.h>
 #import "MSNetworkController.h"
-
-static NSString * const APIKey = @"";
+#import "APIKey.h"
 
 @implementation MovieController
 
@@ -28,7 +27,7 @@ static NSString * const APIKey = @"";
 - (void)retrieveMovieWithName:(NSString *)name completion:(void (^)(NSArray *))completion {
     NSString *path = @"search/movie";
     
-    NSDictionary *dictionary = @{@"api_key": APIKey, @"query":name};
+    NSDictionary *dictionary = @{@"api_key": APIKeyString, @"query":name};
     
     [[MSNetworkController api] GET:path parameters:dictionary success:^(NSURLSessionDataTask *task, id responseObject) {
         
@@ -44,7 +43,7 @@ static NSString * const APIKey = @"";
 
 - (void)retrieveMovieWithID:(NSString *)movieID completion:(void (^)(NSDictionary *))completion {
     NSString *path = [NSString stringWithFormat:@"movie/%@", movieID];
-    NSDictionary *dictionary = @{@"api_key": APIKey};
+    NSDictionary *dictionary = @{@"api_key": APIKeyString};
     
     [[MSNetworkController api] GET:path parameters:dictionary success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *dictionary = responseObject;
